@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="dest/assets/css/style.css">
+    <link rel="stylesheet" href="dest/assets/css/media.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="dest/assets/images/logofilm.jpg">
+    <script src="dest/script.js">
+    </script>
+</head>
+<body>
+    <div id="windowF" class="windowFilm" hidden>
+        <div id="windowFc" class="windowFilm_name">
+            <h2 id="w1" class="windowFilm_name_h2">
+                Название: отсутствует
+            </h2>
+            <input class="windowFilm_content_left_button" onClick="undoMenu()" type="button" name="undo" value="Вернуться" placeholder="Вернуться">
+        </div>
+        <div class="windowFilm_content">
+            <div class="windowFilm_content_left">
+                <div class="windowFilm_content_left_size">
+                    <img class="windowFilm_content_left_size_img" src="dest/assets/images/postDefault.png" id="w14" alt="Poster" />
+                </div>
+            </div>
+            <div class="windowFilm_content_right">
+                <div class="windowFilm_content_right_size">
+                    <div id="w3" class="windowFilm_content_right_size_text">
+                        Жанр: отсутствует
+                    </div>
+                    <div id="w2" class="windowFilm_content_right_size_text">
+                        Страна: отсутствует
+                    </div>
+                    <div id="w4" class="windowFilm_content_right_size_text">
+                        Режиссёр: отсутствует
+                    </div>
+                    <div id="w5" class="windowFilm_content_right_size_text">
+                        Сценарист: отсутствует
+                    </div>
+                    <div id="w6" class="windowFilm_content_right_size_text">
+                        Продюсер: отсутствует
+                    </div>
+                    <div id="w7" class="windowFilm_content_right_size_text">
+                        Оператор: отсутствует
+                    </div>
+                    <div id="w8" class="windowFilm_content_right_size_text">
+                        Композитор: отсутствует
+                    </div>
+                    <div id="w9" class="windowFilm_content_right_size_text">
+                        Бюджет: отсутствует
+                    </div>
+                    <div id="w10" class="windowFilm_content_right_size_text">
+                        Сборы мировые: отсутствует
+                    </div>
+                    <div id="w11" class="windowFilm_content_right_size_text">
+                        Рейтинг возраста: отсутствует
+                    </div>
+                    <div id="w12" class="windowFilm_content_right_size_text">
+                        Длительность: отсутствует
+                    </div>
+                    <div id="w13" class="windowFilm_content_right_size_text">
+                        Дата выхода: отсутствует
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="windowFilm_comment">
+            <div class="windowFilm_comment_add">
+                <div class="windowFilm_content_add_size">
+                    <form onsubmit="return false;">
+                        <div class="windowFilm_content_add_size_atr">
+                            <div class="windowFilm_content_add_size_atr_gr">
+                                <input class="windowFilm_content_add_size_atr_gr_input" id="grCom1" min="1" max="5" type="number" placeholder="Оценка" required/>
+                            </div>
+                            <div class="windowFilm_content_add_size_atr_txt">
+                                <input class="windowFilm_content_add_size_atr_txt_input" id="txtCom1" type="text" placeholder="Текст" />
+                            </div>
+                        </div>
+                        <div class="windowFilm_content_add_size_button">
+                            <input class="windowFilm_content_add_size_button_but" onClick="addComm(document.getElementById('account').innerHTML,document.getElementById('grCom1').value,document.getElementById('txtCom1').value)" type="submit" required/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="windowFilm_comment_read">
+                <div class="windowFilm_content_read_size">
+                    <div id="createCom"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header">
+        <div class="header_content">
+            <div class="header_content_logo">
+                <h2 class="header_content_logo_text1">
+                    Фильмотека
+                </h2>
+            </div>
+            <div class="header_content_link1">
+                <a href="#addFilm" class="header_content_logo_link">
+                    <h2 class="header_content_logo_text2">
+                        Создание
+                    </h2>
+                </a>
+                
+            </div>
+            <div class="header_content_link2">
+                <a href="#settingFilm" class="header_content_logo_link">
+                    <h2 class="header_content_logo_text2">
+                        Настройки
+                    </h2>
+                </a>
+            </div>
+            <div class="header_content_link3">
+                <a href="#listFilm" class="header_content_logo_link">
+                    <h2 class="header_content_logo_text2">
+                        Список
+                    </h2>
+                </a>
+            </div>
+            <div class="header_content_account">
+                <h2 id="account" class="header_content_logo_text2">
+                    Логин : отсутствует
+                </h2>
+            </div>
+        </div>
+    </div>
+    <div class="register">
+        <div class="register_content">
+            <div class="register_content_name">
+                <h2 class="register_content_name_h2">
+                    Регистрация
+                </h1>
+            </div>
+            <div class="register_content_reg">
+                <input class="inputRegText" id="textReg" type="text" name="login" value="" placeholder="Зарегистрируйтесь">
+                <input class="inputRegBut" type="button" value="Подтвердить вход" onClick="addName()">
+            </div>
+        </div>
+    </div>
+    <div class="creater" id="addFilm">
+        <div class="creater_content">
+            <div class="creater_content_name">
+                <h2 class="creater_content_name_h2">
+                    Создание
+                </h1>
+            </div>
+            <form onsubmit="return false;">
+                <div class="creater_content_setting">
+                    <div class="creater_content_setting_line">
+                        <div class="creater_content_setting_line_row1">
+                            <input class="creater_content_setting_line_input" id="al1" type="text" placeholder="Название" required />
+                        </div>
+                        <div class="creater_content_setting_line_row2">
+                            <input class="creater_content_setting_line_input" id="al2" type="text" placeholder="Страна" />
+                        </div>
+                    </div>
+                    <div class="creater_content_setting_line">
+                        <div class="creater_content_setting_line_row1">
+                            <select class="creater_content_setting_line_input" id="al3" size="1" required>
+                                <option selected >Боевик</option>
+                                <option >Вестерн</option>
+                                <option >Драма</option>
+                                <option >Комедия</option>
+                                <option >Романтика</option>
+                                <option >Мультфильм</option>
+                                <option >Ужастик</option>
+                                <option >Триллер</option>
+                            </select>
+                        </div>
+                        <div class="creater_content_setting_line_row2">
+                            <input class="creater_content_setting_line_input" id="al4" type="text" placeholder="Режиссёр" required/>
+                        </div>
+                    </div>
+                    <div class="creater_content_setting_line">
+                        <div class="creater_content_setting_line_row1">
+                            <input class="creater_content_setting_line_input" id="al5" type="text" placeholder="Сценарист" />
+                        </div>
+                        <div class="creater_content_setting_line_row2">
+                            <input class="creater_content_setting_line_input" id="al6" type="text" placeholder="Продюсер" />
+                        </div>
+                    </div>
+                    <div class="creater_content_setting_line">
+                        <div class="creater_content_setting_line_row1">
+                            <input class="creater_content_setting_line_input" id="al7" type="text" placeholder="Оператор" />
+                        </div>
+                        <div class="creater_content_setting_line_row2">
+                            <input class="creater_content_setting_line_input" id="al8" type="text" placeholder="Композитор" />
+                        </div>
+                    </div>
+                    <div class="creater_content_setting_line">
+                        <div class="creater_content_setting_line_row1">
+                            <input class="creater_content_setting_line_input" id="al9" min="0" type="number" placeholder="Бюджет" required/>
+                        </div>
+                        <div class="creater_content_setting_line_row2">
+                            <input class="creater_content_setting_line_input" id="al10" min="0" type="number" placeholder="Сборы мировые" required/>
+                        </div>
+                    </div>
+                    <div class="creater_content_setting_line">
+                        <div class="creater_content_setting_line_row1">
+                            <input class="creater_content_setting_line_input" id="al11" min="0" max="100" type="number" placeholder="Рейтинг возраста" required/>
+                        </div>
+                        <div class="creater_content_setting_line_row2">
+                            <input class="creater_content_setting_line_input" id="al12" min="0" max="4" type="number" placeholder="Длительность" required/>
+                        </div>
+                    </div>
+                    <div class="creater_content_setting_line">
+                        <div class="creater_content_setting_line_row1">
+                            <input class="creater_content_setting_line_input" id="al13" type="date" placeholder="Дата выхода" required/>
+                        </div>
+                        <div class="creater_content_setting_line_row2">
+                            <input class="creater_content_setting_line_file" id="al14" type="file" accept=".png,.jpg"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="creater_content_button">
+                    <div class="creater_content_button_otdel">
+
+                            <input class="creater_content_button_but" onClick="addFilmInList(document.getElementById('al1').value,document.getElementById('al2').value,document.getElementById('al3').value,document.getElementById('al4').value,document.getElementById('al5').value,document.getElementById('al6').value,document.getElementById('al7').value,document.getElementById('al8').value,document.getElementById('al9').value,document.getElementById('al10').value,document.getElementById('al11').value,document.getElementById('al12').value,document.getElementById('al13').value,document.getElementById('al14').value)" type="submit" required/>
+                            <input class="creater_content_button_but" type="reset" placeholder="Дата выхода" required/>
+                        
+                    </div>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+    <div class="filter" id="settingFilm">
+        <div class="filter_content">
+            <div class="filter_content_name">
+                <h2 class="filter_content_name_h2">
+                    Фильтры
+                </h2>
+            </div>
+                <form onsubmit="return false;">
+                <div class="filter_content_filtr">
+                    <input id="fltr1" class="filter_content_filtr_input" type="date" placeholder="Дата выхода"/>
+                    <select id="fltr2" class="filter_content_filtr_input" size="1">
+                        <option selected>Любой</option>
+                        <option>Боевик</option>
+                        <option>Вестерн</option>
+                        <option>Драма</option>
+                        <option>Комедия</option>
+                        <option>Романтика</option>
+                        <option>Мультфильм</option>
+                        <option>Ужастик</option>
+                        <option>Триллер</option>
+                    </select>
+                    <input id="fltr3" class="filter_content_filtr_input" type="text" placeholder="Режиссёр"/>
+                    <input id="fltr4" class="filter_content_filtr_input" min="0" max="100" type="number" placeholder="Рейтинг возраста"/>
+                </div>
+                <div class="filter_content_button">
+                    <input onclick="filterFilmInList(document.getElementById('fltr1').value,document.getElementById('fltr2').value,document.getElementById('fltr3').value,document.getElementById('fltr4').value)" class="filter_content_button_but" type="submit" placeholder="Дата выхода" required/>   
+                    <input class="filter_content_button_but" type="reset" placeholder="Дата выхода" required/>
+                </div>
+                </form>
+        </div>
+    </div>
+    <div class="sort">
+        <div class="sort_content">
+            <div class="sort_content_name">
+                <h2 class="sort_content_name_h2">
+                    Сортировка
+                </h2>
+            </div>
+            <form onsubmit="return false;">
+                <div class="sort_content_srt">
+                    <select id="srt1" class="sort_content_srt_input" size="1">
+                        <option selected>Нет сортировки</option>
+                        <option>Дата выхода</option>
+                        <option>Длительность</option>
+                        <option>Название</option>
+                    </select>
+                    <select id="srt2" class="sort_content_srt_input" size="1">
+                        <option selected>По возрастанию</option>
+                        <option>По убыванию</option>
+                    </select>
+                </div>
+                <div class="sort_content_button">
+                    <input onClick="sortInList(document.getElementById('srt1').value,document.getElementById('srt2').value)" class="sort_content_button_but" type="submit" placeholder="Дата выхода"/>   
+                    <input class="sort_content_button_but" type="reset" placeholder="Дата выхода"/>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="container" id="listFilm">
+        <div class="container_content">
+            <div class="container_content_name">
+                <h2 class="container_content_name_h2">
+                    Список
+                </h2>
+            </div>
+            <div class="container_content_list">
+                <div id="createObject"></div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="emptiness">
+
+    </div>
+    <div class="basement">
+        <div class="basement_content">
+            <div class="basement_content_left">
+                <div class="basement_content_left_text">
+                    О сайте
+                </div>
+                <div class="basement_content_left_text_bt">
+                    Сайт создан для сохранения кинофильмов в фильмотеке.
+                </div>
+            </div>
+            <div class="basement_content_right">
+                <div class="basement_content_right_text">
+                    Ссылки
+                </div>
+                <div class="basement_content_right_text_bt">
+                    <a href="https://inpit.sstu.ru/home.php"><img alt="logo INPIT" class="basement_content_right_links_logo" src="dest/assets/images/inpit.png"></a>
+                    <a href="https://vk.com/id310386679"><img alt="logo INPIT" class="basement_content_right_links_logo" src="dest/assets/images/vk.png"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
